@@ -10,13 +10,16 @@ services:
       - type: volume # You could also bind-mount this to your local FS (see below)
         source: satisfactory-data
         target: /var/opt/satisfactory/data
+      - type: volume
+        source: satisfactory-data
+        target: /opt/satisfactory/.config/Epic/FactoryGame
     ports:
-      - 2456:2456/tcp
-      - 2456:2456/udp
-      - 2457:2457/tcp
-      - 2457:2457/udp
-      - 2458:2458/tcp
-      - 2458:2458/udp
+      - 7777:7777/tcp
+      - 7777:7777/udp
+      - 15000:15000/tcp
+      - 15000:15000/udp
+      - 15777:15777/tcp
+      - 15777:15777/udp
 
 volumes:
   satisfactory-data:
