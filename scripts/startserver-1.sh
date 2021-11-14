@@ -41,9 +41,9 @@ set -e
 # echo "World: ${VALHEIM_SERVER_WORLD}"
 
 SERVER_ARGS=(
-    "-MultiHome=0.0.0.0"
-    "-log"
-    "-unattended"
+	"-MultiHome=0.0.0.0"
+	"-log"
+	"-unattended"
 )
 
 set -x
@@ -54,5 +54,5 @@ UE4_PROJECT_ROOT=$(dirname "$UE4_TRUE_SCRIPT_NAME")
 chmod +x "$UE4_PROJECT_ROOT/Engine/Binaries/Linux/UE4Server-Linux-Shipping"
 
 "$UE4_PROJECT_ROOT/Engine/Binaries/Linux/UE4Server-Linux-Shipping" \
-    FactoryGame \
-    ${SERVER_ARGS[@]}
+	FactoryGame \
+	${SERVER_ARGS[@]}
