@@ -2,16 +2,16 @@
 version: "3.8"
 
 services:
-  satisfactory-server:
+  server:
     build: .
     env_file:
       - .env
     volumes:
-      - type: volume # You could also bind-mount this to your local FS (see below)
-        source: satisfactory-data
+      - type: volume
+        source: data
         target: /var/opt/satisfactory/data
       - type: volume
-        source: satisfactory-data
+        source: data
         target: /opt/satisfactory/.config/Epic/FactoryGame
     ports:
       - 7777:7777/tcp
@@ -22,4 +22,4 @@ services:
       - 15777:15777/udp
 
 volumes:
-  satisfactory-data:
+  data:
