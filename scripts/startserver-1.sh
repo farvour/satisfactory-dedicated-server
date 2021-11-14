@@ -41,6 +41,7 @@ set -e
 # echo "World: ${VALHEIM_SERVER_WORLD}"
 
 SERVER_ARGS=(
+    "-MultiHome=0.0.0.0"
     "-log"
     "-unattended"
 )
