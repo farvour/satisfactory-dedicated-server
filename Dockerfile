@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 LABEL maintainer="Thomas Farvour <tom@farvour.com>"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -53,7 +53,7 @@ RUN echo "=== downloading and installing server with steamcmd..." \
     && ${SERVER_HOME}/Steam/steamcmd.sh \
     +login anonymous \
     +force_install_dir ${SERVER_INSTALL_DIR} \
-    +app_update 1690800 validate \
+    +app_update 1690800 -beta experimental validate \
     +quit
 
 # Install custom startserver script.

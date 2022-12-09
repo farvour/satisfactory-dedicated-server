@@ -7,39 +7,6 @@
 
 set -e
 
-# # Set sane defaults if needed.
-# : ${VALHEIM_SERVER_NAME:="My Valheim Server"}
-# : ${VALHEIM_SERVER_WORLD:="dedicated_world"}
-# : ${VALHEIM_SERVER_PASSWORD:=""}
-# : ${VALHEIM_SERVER_PUBLIC:="0"} # Private, unlisted by default.
-
-# # Dedicated server requires a password.
-# if [ -z "${VALHEIM_SERVER_PASSWORD}" ]; then
-#     echo "Password is not set!"
-#     exit 1
-# fi
-
-# # BepInEx-specific settings
-# # NOTE: Do not edit unless you know what you are doing!
-# ####
-# export DOORSTOP_ENABLE=TRUE
-# export DOORSTOP_INVOKE_DLL_PATH=./BepInEx/core/BepInEx.Preloader.dll
-# export DOORSTOP_CORLIB_OVERRIDE_PATH=./unstripped_corlib
-
-# export LD_LIBRARY_PATH="./doorstop_libs:$LD_LIBRARY_PATH"
-# export LD_PRELOAD="libdoorstop_x64.so:$LD_PRELOAD"
-
-# # End BepInEx-specific settings
-
-# export templdpath=$LD_LIBRARY_PATH
-# export LD_LIBRARY_PATH=./linux64:$LD_LIBRARY_PATH
-# export SteamAppId=892970
-
-# echo "Starting server PRESS CTRL-C to exit"
-
-# echo "Name: ${VALHEIM_SERVER_NAME}"
-# echo "World: ${VALHEIM_SERVER_WORLD}"
-
 SERVER_ARGS=(
 	"-MultiHome=0.0.0.0"
 	"-log"
