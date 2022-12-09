@@ -20,6 +20,14 @@ services:
       - 15000:15000/udp
       - 15777:15777/tcp
       - 15777:15777/udp
+    deploy:
+      resources:
+        limits:
+          cpus: '2.00'
+          memory: 6G
+        reservations:
+          cpus: '0.50'
+          memory: 2G
 
 volumes:
   data: null

@@ -15,6 +15,7 @@ cd ${SERVER_INSTALL_DIR}
 
 if [ "$(id -u)" = "0" ]; then
 	# Ensure ownersihp of data files.
+	chown -R ${PROC_USER}:${PROC_GROUP} ${SERVER_HOME}/.config/Epic/FactoryGame
 	chown -R ${PROC_USER}:${PROC_GROUP} ${SERVER_DATA_DIR}
 
 	echo "Dropping root privileges before invoking server..."
