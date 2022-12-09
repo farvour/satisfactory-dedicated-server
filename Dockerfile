@@ -73,6 +73,10 @@ RUN echo "=== Downloading and installing server with steamcmd..." \
     +app_update 1690800 -beta experimental validate \
     +quit
 
+# Install custom startserver script.
+
+COPY --chown=${PROC_USER}:${PROC_GROUP} scripts/startserver-1.sh ${SERVER_INSTALL_DIR}/
+
 # Switch back to root user to allow entrypoint to drop privileges.
 USER root
 
@@ -81,8 +85,7 @@ EXPOSE 15000/tcp 15000/udp
 EXPOSE 15777/tcp 15777/udp
 EXPOSE 7777/tcp 7777/udp
 
-# Install custom entrypoint and startserver scripts.
+# Install custom entrypoint script.
 COPY scripts/entrypoint.sh /entrypoint.sh
-COPY scripts/startserver-1.sh ${SERVER_INSTALL_DIR}/
 ENTRYPOINT ["/usr/bin/dumb-init", "--rewrite", "15:2", "--", "/entrypoint.sh"]
 CMD ["./startserver-1.sh"]
