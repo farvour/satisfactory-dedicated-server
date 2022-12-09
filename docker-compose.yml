@@ -22,4 +22,4 @@ services:
       - 15777:15777/udp
 
 volumes:
-  data:
+  data: null
