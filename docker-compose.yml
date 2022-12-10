@@ -24,10 +24,10 @@ services:
       resources:
         limits:
           cpus: '2.00'
-          memory: 6G
+          memory: 10G
         reservations:
-          cpus: '0.50'
-          memory: 2G
+          cpus: '1.00'
+          memory: 4G
 
 volumes:
   data: null
